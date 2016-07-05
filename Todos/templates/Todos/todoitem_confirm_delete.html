@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object.description }}"?</p>
+    <input type="hidden" id="deleteitem" name="deleteitem" value="{{ object.item_id_id }}"/>
+    <input type="submit" value="Confirm" />
+</form>
+</body>
+</html>
+</body>
+</html>

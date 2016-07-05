@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Lists</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <script src=" {% static 'js/bootstrap.min.js' %}"></script>
+    <script src=" {% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+<h1>Todo lists are:<a href="lists/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                 </a></h1>
+    <table  class="table table-striped table-bordered table-hover table-condensed">
+        {% for todo in todolist_list %}
+        <tr class="alert-danger">
+            <td><a href="/todos/lists/{{ todo.id }}">{{ todo.name }}</a>:</td>
+            <td><a href="/todos/lists/update/{{ todo.id }}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+            </td>
+            <td><a href="/todos/lists/delete/{{ todo.id }}">
+                    <span class="glyphicon glyphicon-remove"></span>
+                 </a>
+            </td>
+
+{#            <td><a href="/todos/lists/update/{{ todo.id }}" class="pull-right">Update</a>:</td>#}
+{#            <td><a href="/todos/lists/delete/{{ todo.id }}" class="pull-right">Delete</a></td>#}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

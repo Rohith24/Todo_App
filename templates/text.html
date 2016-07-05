@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Todo lists are:</h1>
+    <ol>
+        {% for todo in todos %}
+        <li>
+            <a href="todo/{{ todo.id }}">{{ todo.name }}</a>:
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

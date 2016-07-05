@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Todo items are:</h1>
+    <table border="thick">
+        <tr>
+            <th>description</th>
+            <th>duedate</th>
+            <th>status</th>
+        </tr>
+    {% for item in items %}
+        <tr>
+        <td>{{ item.description }}</td>
+        <td>{{ item.duedate }}</td>
+        <td>{% if item.status %}
+                    Completed
+                {% else %}
+                    Not Completed
+                {% endif %}
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
